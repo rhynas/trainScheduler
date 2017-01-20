@@ -1,0 +1,13 @@
+.jumbotron{
+	/*background-color:#eee;*/
+	text-align: center;
+
+}
+
+    table, th, td{
+        border: 1px solid #fff;
+    }
+/*    table th, table td{
+        padding: 5px;
+        text-align: left;
+    }*/
