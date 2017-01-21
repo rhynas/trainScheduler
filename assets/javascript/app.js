@@ -38,6 +38,9 @@ $(document).ready(function(){
     $("table tbody").empty();
   }
 
+  function refreshTable(){
+    $('#displayTrainInfo').load()
+  }
   // Capture Add Button Click
   $("#addTrain").on("click", function() {
     clearContent();
@@ -47,7 +50,7 @@ $(document).ready(function(){
     firstTrainTimeVal = $("#firstTrainTimeInput").val().trim();
     frequencyVal = $("#frequencyInput").val().trim();
 
-    // if (trainName.length > 0){
+    if (trainNameVal.length > 0){
       // Code for "Setting values in the database"
       database.ref().push({
         train_name: trainNameVal,
@@ -55,9 +58,9 @@ $(document).ready(function(){
         first_train_time: firstTrainTimeVal,
         frequency: frequencyVal
       });
-      // }else{
-      //   alert('the name can\'t be blank')
-      // }
+      }else{
+        $("#trainNameInput").addClass(".has-error");
+      }
     // Don't refresh the page!
     return false;
   });//end add button function
@@ -90,10 +93,11 @@ $(document).ready(function(){
       $("table tbody").append(newTrainLine).addClass("dropdown");
 
     }
-
   // Handle the errors
   }, function(errorObject) {
   console.log("Errors handled: " + errorObject.code);
   });
+
+  refreshTable();
 });//End document ready function
 

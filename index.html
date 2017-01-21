@@ -9,6 +9,9 @@
 	<!-- Latest compiled and minified CSS Boostrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 	<!-- Link to Firebase -->
 	<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
 
@@ -31,37 +34,41 @@
 			<h4>Check out when the next train is coming...!!!</h4>
 		</div><!-- end Jumbotron -->
 
-	   <!-- <div class="row"> -->
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">Current Train Schedule</h3>
-				</div><!-- end panel title -->
-				<div class="panel-body">
-					<table class="table">
-						<thead>
-						  <tr>
-						      <th data-field="name">Train Name</th>
-						      <th data-field="destination">Destination</th>
-						      <th data-field="frequency">Frequency (min)</th>
-						      <th data-field="nextArrival">Next Arrival</th>
-						      <th data-field="minutesAway">Minutes Away</th>
-						  </tr>
-						</thead>
-						<tbody id="displayTrainInfo">
+   		<!-- <div class="row"> -->
+   		<!-- Current train Schedule panel information  -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Current Train Schedule</h3>
+			</div><!-- end panel title -->
+			<div class="panel-body">
+				<table class="table">
+					<thead>
+					  <tr>
+					      <th data-field="name">Train Name</th>
+					      <th data-field="destination">Destination</th>
+					      <th data-field="frequency">Frequency (min)</th>
+					      <th data-field="nextArrival">Next Arrival</th>
+					      <th data-field="minutesAway">Minutes Away</th>
+					  </tr>
+					</thead>
+					<tbody id="displayTrainInfo">
 
-						</tbody>
-					</table>					
-				</div><!-- end panel body -->
-			</div><!-- end panel with train info -->
+					</tbody>
+				</table>					
+			</div><!-- end panel body -->
+		</div><!-- end panel with train info -->
 
 		<!-- </div> end row with train table -->
 	 	<!-- <div class="row"> -->
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
 			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">Add Train</h3>
+				<div class="panel-heading " role="tab" id="headingOne">
+					<h3 class="panel-title" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Add Train</h3>
 				</div>
-				<div class="panel-body">
-					<form>
+				<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<form>
 						<div class="form-group">
 							<label for="trainName">Train Name</label>
 							<input type="text" id="trainNameInput" class="form-control" placeholder="Type Train Name">
@@ -79,12 +86,17 @@
 							<input type="number" id="frequencyInput" class="form-control" placeholder="Minutes">
 						</div>
 						<button type="submit" id="addTrain" class="btn btn-default">Add Train</button>
-					</form>	 			
-				</div><!-- end panel body -->
+						</form>	 			
+					</div><!-- end panel body -->
+				</div>
 			</div><!-- end panel-->
 
 	 	<!-- </div>end row with add train -->
-
- 	</div><!-- end container -->
+		</div> <!-- End Panel Group -->
+	</div><!-- end container -->
+	<script type="text/javascript">
+		$('.collapse').collapse();
+		
+	</script>
 </body>
 </html>

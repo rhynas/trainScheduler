@@ -1,12 +1,33 @@
+h1, h4{
+	color: #2c0907;
+	/*opacity:1;*/
+}
 .jumbotron{
 	/*background-color:#eee;*/
+	margin-top: 20px;
 	text-align: center;
+	background: rgba(255,217,149,0.1);
+	/*opacity: 0.5;*/
 
 }
+.container{
+	margin-top: 20px;
+	background-image: url("../images/rail-234318_1280.jpg");
+	background-size: cover;
+}
 
-    table, th, td{
-        border: 1px solid #fff;
-    }
+.panel{
+	/*background-color:#eee;*/
+	/*margin-top: 20px;*/
+	/*text-align: center;*/
+	background: rgba(256,256,256,0.95);
+	/*color: white;*/
+	/*opacity: 0.5;*/
+
+}
+table, th, td{
+	border: 1px solid #fff;
+}
 /*    table th, table td{
         padding: 5px;
         text-align: left;
